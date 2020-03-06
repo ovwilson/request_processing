@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="task" label="Application Options" max_length="40" name="x_398178_request_p_application_options" sizeclass="1" type="collection">
+        <element label="Key" mandatory="true" max_length="99" name="key" type="string"/>
+    </element>
+</database>

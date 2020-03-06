@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_wizard_answer">
+    <sys_wizard_answer action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <answer>New RequestProcess</answer>
+        <button_label/>
+        <dependent_value/>
+        <element/>
+        <name>RequestProcess</name>
+        <next_question/>
+        <order>100</order>
+        <payload_name/>
+        <question display_value="Task" name="Task">d341a995db030010629a5385ca9619a1</question>
+        <roles/>
+        <script/>
+        <sys_class_name>sys_wizard_answer</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-17 20:44:59</sys_created_on>
+        <sys_id>ab71c251db0b0010629a5385ca961972</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>RequestProcess</sys_name>
+        <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
+        <sys_update_name>sys_wizard_answer_ab71c251db0b0010629a5385ca961972</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-17 20:44:59</sys_updated_on>
+        <table/>
+        <target_url>x_398178_request_p_requestprocess.do</target_url>
+        <type>1</type>
+    </sys_wizard_answer>
+</record_update>
