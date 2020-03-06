@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_cors_rule">
+    <sys_cors_rule action="DELETE">
+        <delete>false</delete>
+        <domain>http://127.0.0.1:443</domain>
+        <exposed_headers/>
+        <get>true</get>
+        <max_age>99</max_age>
+        <name>RP_CORS</name>
+        <patch>true</patch>
+        <post>true</post>
+        <put>true</put>
+        <rest_api>now/table</rest_api>
+        <sys_class_name>sys_cors_rule</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-23 21:14:08</sys_created_on>
+        <sys_id>6651c153db8b0010629a5385ca96192f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>RP_CORS</sys_name>
+        <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
+        <sys_update_name>sys_cors_rule_6651c153db8b0010629a5385ca96192f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-23 23:33:00</sys_updated_on>
+    </sys_cors_rule>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</application>
+        <file_path/>
+        <instance_id>912af92cdbf113c0b2e05d00cf961981</instance_id>
+        <instance_name>dev57615</instance_name>
+        <name>sys_cors_rule_6651c153db8b0010629a5385ca96192f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_cors_rule"><sys_cors_rule action="INSERT_OR_UPDATE"><delete>false</delete><domain>http://127.0.0.1:443</domain><exposed_headers/><get>true</get><max_age>99</max_age><name>RP_CORS</name><patch>true</patch><post>true</post><put>true</put><rest_api>now/table</rest_api><sys_class_name>sys_cors_rule</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-02-23 21:14:08</sys_created_on><sys_id>6651c153db8b0010629a5385ca96192f</sys_id><sys_mod_count>3</sys_mod_count><sys_name>RP_CORS</sys_name><sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package><sys_policy/><sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope><sys_update_name>sys_cors_rule_6651c153db8b0010629a5385ca96192f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-02-23 23:33:00</sys_updated_on></sys_cors_rule></record_update>]]></payload>
+        <payload_hash>797198757</payload_hash>
+        <record_name>RP_CORS</record_name>
+        <reverted_from/>
+        <source>25e00611db0b0010629a5385ca9619be</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-23 23:33:00</sys_created_on>
+        <sys_id>1f7125d3dbcb0010629a5385ca96198d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17074659a910000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-23 23:33:00</sys_updated_on>
+        <type>CORS Rule</type>
+        <update_guid>977125d316cb001058e618fe5be58e8d</update_guid>
+        <update_guid_history>977125d316cb001058e618fe5be58e8d:797198757,5a94c953c88b0010a7753464d55e8fc3:-1959805122,2b448553c48b0010b6434509ff7ea6e3:1540275343,bcb1cd9f9c4b001091f5a052b3686fc0:1243077031</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-24 02:03:16</sys_created_on>
+        <sys_db_object display_value="" name="sys_cors_rule">sys_cors_rule</sys_db_object>
+        <sys_id>183e8155bfd24e38895042ffee443890</sys_id>
+        <sys_metadata>6651c153db8b0010629a5385ca96192f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>RP_CORS</sys_name>
+        <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
+        <sys_scope_delete display_value="">29262d4c53c74f37886211821ce8e971</sys_scope_delete>
+        <sys_update_name>sys_cors_rule_6651c153db8b0010629a5385ca96192f</sys_update_name>
+        <sys_update_version display_value="sys_cors_rule_6651c153db8b0010629a5385ca96192f">1f7125d3dbcb0010629a5385ca96198d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-02-24 02:03:16</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="task" label="Roadster" max_length="40" name="x_398178_request_p_roadster" type="collection">
+        <element choice="1" label="Support Type" max_length="40" name="support_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="I'd like to request a new application"/>
+                <element inactive="true" inactive_on_update="true" label="I'd like to request a new application" sequence="0"/>
+            </choice>
+        </element>
+    </element>
+</database>

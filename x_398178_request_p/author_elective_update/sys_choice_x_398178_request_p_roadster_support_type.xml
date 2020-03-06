@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="support_type" table="x_398178_request_p_roadster" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>support_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>I'd like to request a new application</label>
+            <language>en</language>
+            <name>x_398178_request_p_roadster</name>
+            <sequence/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-03-06 16:20:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f56139c3db130010629a5385ca961918</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-03-06 16:22:17</sys_updated_on>
+            <value/>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>support_type</element>
+            <hint/>
+            <inactive>true</inactive>
+            <label>I'd like to request a new application</label>
+            <language>en</language>
+            <name>x_398178_request_p_roadster</name>
+            <sequence>0</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-03-06 16:19:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>2a413dc3db130010629a5385ca9619e3</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-03-06 16:22:17</sys_updated_on>
+            <value/>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>support_type</element>
+            <name>x_398178_request_p_roadster</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-03-06 16:19:46</sys_created_on>
+            <sys_id>f9617dc3db130010629a5385ca9619e5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>support_type</sys_name>
+            <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
+            <sys_update_name>sys_choice_x_398178_request_p_roadster_support_type</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-03-06 16:19:46</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

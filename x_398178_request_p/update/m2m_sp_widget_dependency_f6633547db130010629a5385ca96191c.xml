@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
+        <sp_dependency display_value="maines2015">06b2f32adb1f4010629a5385ca961980</sp_dependency>
+        <sp_widget display_value="Roadster Widget">6a637507db130010629a5385ca961960</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-06 16:28:34</sys_created_on>
+        <sys_id>f6633547db130010629a5385ca96191c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>maines2015.Roadster Widget</sys_name>
+        <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_f6633547db130010629a5385ca96191c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-06 16:28:34</sys_updated_on>
+    </m2m_sp_widget_dependency>
+</record_update>
