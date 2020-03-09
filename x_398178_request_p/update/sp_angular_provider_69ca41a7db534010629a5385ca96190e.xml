@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_angular_provider">
+    <sp_angular_provider action="INSERT_OR_UPDATE">
+        <name>ngAPIService</name>
+        <script><![CDATA[function($rootScope, $http){
+	
+	$rootScope.$on('get', function(evt,data){
+		
+		$http.get(data.url + data.tableName+'?sysparm_query='+data.query+'&sysparm_limit='+data.queryLimit).then(
+			function successCallback(response) {
+			$rootScope.$broadcast('records.queried', response.data.result);
+		}, function errorCallback(response) {
+			console.log("Unable to perform get request");
+			$rootScope.$broadcast('error',response);
+		});
+	
+	});
+	
+	$rootScope.$on('getById', function(evt,data){
+	
+		$http.get(data.url+data.tableName+'/'+data.id).then(
+      function successCallback(response) {
+				$rootScope.$broadcast('record.queried', response.data.result);
+      },
+      function errorCallback(response) {
+        console.log("Unable to perform get request");
+			  $rootScope.$broadcast('error', response);
+      }
+    );
+		
+	});
+	
+	$rootScope.$on('post', function(evt,data) {
+		
+    $http.post(data.url + data.tableName, data.body).then(
+      function successCallback(response) {
+        console.log("Successfully POST-ed data");
+				$rootScope.$broadcast('record.created', response);
+      },
+      function errorCallback(response) {
+        console.log("POST-ing of data failed");
+			  $rootScope.$broadcast('error', response);
+      }
+    );
+		
+	});
+	
+	$rootScope.$on('patch', function(evt,data) {
+
+		$http.patch(data.url + data.tableName + '/'+ data.body.sys_id, data.body).then(
+      function successCallback(response) {
+        console.log("Successfully PATCH-ed data");
+				$rootScope.$broadcast('record.updated', response);
+      },
+      function errorCallback(response) {
+        console.log("PATCH-ing of data failed");
+				$rootScope.$broadcast('error', response);
+      }
+    );
+		
+	});
+	
+	$rootScope.$on('reduce', function(data, modelGroup){
+		var obj = {};
+		modelGroupKeys.map(function(d){
+			obj[d] = data[d];
+		});
+		return obj;
+	});
+	
+}
+]]></script>
+        <sys_class_name>sp_angular_provider</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-08 02:48:10</sys_created_on>
+        <sys_id>69ca41a7db534010629a5385ca96190e</sys_id>
+        <sys_mod_count>45</sys_mod_count>
+        <sys_name>ngAPIService</sys_name>
+        <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
+        <sys_update_name>sp_angular_provider_69ca41a7db534010629a5385ca96190e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-08 04:53:58</sys_updated_on>
+        <type>service</type>
+    </sp_angular_provider>
+</record_update>

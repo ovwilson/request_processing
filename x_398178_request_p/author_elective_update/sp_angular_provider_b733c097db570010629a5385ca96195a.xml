@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_angular_provider">
+    <sp_angular_provider action="DELETE">
+        <name>ngService</name>
+        <script><![CDATA[function ngService($http){
+	
+	//sp.log('Functions loaded');
+		
+	function get(url, tableName, query, queryLimit){
+		
+		var qry = query || '^ORDERBYsys_updated_on^ORDERBYDESCsys_updated_on';
+		
+		$http.get(url+tableName+'?sysparm_query='+qry+'&sysparm_limit='+queryLimit).then(function successCallback(response) {
+			return response.data.result;
+		}, function errorCallback(response) {
+			// console.log("Unable to perform get request");
+			return response;
+		});
+	}
+	
+	function modelReduce(data, modelGroup){
+		var obj = {};
+		modelGroupKeys.map(function(d){
+			obj[d] = data[d];
+		});
+		return obj;
+	}
+	
+
+}
+]]></script>
+        <sys_class_name>sp_angular_provider</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-07 02:57:21</sys_created_on>
+        <sys_id>b733c097db570010629a5385ca96195a</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>ngService</sys_name>
+        <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
+        <sys_update_name>sp_angular_provider_b733c097db570010629a5385ca96195a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-08 02:46:41</sys_updated_on>
+        <type>service</type>
+    </sp_angular_provider>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</application>
+        <file_path/>
+        <instance_id>912af92cdbf113c0b2e05d00cf961981</instance_id>
+        <instance_name>dev57615</instance_name>
+        <name>sp_angular_provider_b733c097db570010629a5385ca96195a</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_angular_provider"&gt;&lt;sp_angular_provider action="INSERT_OR_UPDATE"&gt;&lt;name&gt;ngService&lt;/name&gt;&lt;script&gt;&lt;![CDATA[function ngService($http){
+	
+	//sp.log('Functions loaded');
+		
+	function get(url, tableName, query, queryLimit){
+		
+		var qry = query || '^ORDERBYsys_updated_on^ORDERBYDESCsys_updated_on';
+		
+		$http.get(url+tableName+'?sysparm_query='+qry+'&amp;sysparm_limit='+queryLimit).then(function successCallback(response) {
+			return response.data.result;
+		}, function errorCallback(response) {
+			// console.log("Unable to perform get request");
+			return response;
+		});
+	}
+	
+	function modelReduce(data, modelGroup){
+		var obj = {};
+		modelGroupKeys.map(function(d){
+			obj[d] = data[d];
+		});
+		return obj;
+	}
+	
+
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sp_angular_provider&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-03-07 02:57:21&lt;/sys_created_on&gt;&lt;sys_id&gt;b733c097db570010629a5385ca96195a&lt;/sys_id&gt;&lt;sys_mod_count&gt;12&lt;/sys_mod_count&gt;&lt;sys_name&gt;ngService&lt;/sys_name&gt;&lt;sys_package display_value="Request Processing" source="x_398178_request_p"&gt;a1e00611db0b0010629a5385ca9619bc&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Request Processing"&gt;a1e00611db0b0010629a5385ca9619bc&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_angular_provider_b733c097db570010629a5385ca96195a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-03-08 02:46:41&lt;/sys_updated_on&gt;&lt;type&gt;service&lt;/type&gt;&lt;/sp_angular_provider&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>132893831</payload_hash>
+        <record_name>ngService</record_name>
+        <reverted_from/>
+        <source>06f7b1c7db130010629a5385ca9619f5</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-08 02:46:41</sys_created_on>
+        <sys_id>cf7a41a7db534010629a5385ca961918</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>170b809993e0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-08 02:46:41</sys_updated_on>
+        <type>Widget Angular Provider</type>
+        <update_guid>0b7a41a7a2534010ed2874e92ff63718</update_guid>
+        <update_guid_history>0b7a41a7a2534010ed2874e92ff63718:132893831,b46acd670e53401069fc77b4781b85eb:-1892493329,530a49675f534010b2c5dbde3513691c:132893831,c50ac967535340107fa5347c238994ca:-1609529745,0eb985679d534010f10cbcd09cb24304:132893831,0c6981272f534010657e93ef00104734:-266146675,32260daf281340103c0c2736281b9407:-1589736348,4105456340534010a46fc8a9377b21b8:2098620191,05044563055340106850099f028518b3:-1512923113,2ef8c85b3c570010f23e838d00b85044:-1473607256,b4a784d792570010179e68e41eb7a9d9:-145573013,acc488970e570010784040118a6d45de:-1473607256,99530497605700101a1b5eeb9739eb45:492970035</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="ngService">b4ca05a7db534010629a5385ca96194f</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-08 02:47:54</sys_created_on>
+        <sys_db_object display_value="" name="sp_angular_provider">sp_angular_provider</sys_db_object>
+        <sys_id>3b623785dec14aa0929bb91732583040</sys_id>
+        <sys_metadata>b733c097db570010629a5385ca96195a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ngService</sys_name>
+        <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
+        <sys_scope_delete display_value="">29262d4c53c74f37886211821ce8e971</sys_scope_delete>
+        <sys_update_name>sp_angular_provider_b733c097db570010629a5385ca96195a</sys_update_name>
+        <sys_update_version display_value="sp_angular_provider_b733c097db570010629a5385ca96195a">cf7a41a7db534010629a5385ca961918</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-08 02:47:54</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

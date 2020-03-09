@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element extends="task" label="Roadster" max_length="40" name="x_398178_request_p_roadster" type="collection">
+    <element extends="task" label="Roadster" max_length="40" name="x_398178_request_p_roadster" sizeclass="3" type="collection">
+        <element choice="1" label="Requested For" max_length="32" name="roadster_requested_for" reference="sys_user" type="reference">
+            <choice/>
+        </element>
         <element choice="1" label="Support Type" max_length="40" name="support_type" type="choice">
             <choice>
-                <element inactive_on_update="false" label="I'd like to request a new application"/>
-                <element inactive="true" inactive_on_update="true" label="I'd like to request a new application" sequence="0"/>
+                <element inactive_on_update="false" label="I'd like to request a new application" value="New Application"/>
+                <element inactive="true" inactive_on_update="true" label="I'd like to request a new application" sequence="0" value="Existing Application"/>
             </choice>
         </element>
     </element>

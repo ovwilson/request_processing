@@ -1,36 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function($scope,$http) {
+        <client_script><![CDATA[function($rootScope, $scope, $http, StoreService ) {
   /* widget controller */
   var c = this;
 	
-	/* 
-	API
+	// Set Widget(s)
+	$scope.listWidget = c.data.listWidget;
+	$scope.buttonWidget = c.data.buttonBarWidget;
+	$scope.formWidget = c.data.formWidget;
 	
-	*/
-	
-	$scope.nowAPI = '/api/now/table/';
-	$scope.requestTableName = 'x_398178_request_p_roadster';
-	$scope.sysparamLimit = 10;
-	$scope.response = null;
-	$scope.error = null;
-	$scope.data = [];
-	$scope.model = {};
-	$scope.modelGroup = [
-		{name: 'sys_id', label:'sys_id'},
-		{name: 'short_description', label:'Short Description'}
-	];
-	$scope.modelGroupKeys = 
-		$scope.modelGroup.map(function(group){ return group.name; })
-	
-	$scope.select = function(sys_id){
-		console.log(sys_id);
-		$scope.getRequest(sys_id);
+	// Set Store Variables
+	$scope.state = '';
+	$scope.data = {
+		tableName : 'x_398178_request_p_roadster',
+		tableLabel:'Roadster Requests',
+		url: '/api/now/table/',
+		query: '^ORDERBYsys_updated_on^ORDERBYDESCsys_updated_on',
+		queryLimit : 10,
+		modelGroup: [
+			{name: 'sys_id', label:'sys_id', type:'text', visible: false},
+			{name:'number',label: 'Number', type:'text', link: true, visible: true, disabled: true },
+			{name: 'short_description', label:'Short Description', type:'text', visible: true },
+			//{name: 'roadster_requested_for', label:'Requested For', type:'lookup', visible: true },
+			//{name: 'support_type', label:'Support Type', type:'select', visible: true },
+			{name: 'sys_updated_on', label:'Updated', type:'date', visible: true },
+			{name: 'sys_updated_by', label:'Updated By', type:'date', visible: true }
+		],
+		buttons: [
+			{name: 'Submit', label: 'Submit', cls:'primary', icon:"floppy-disk", states:['new']},
+			{name: 'Update', label: 'Update', cls:'primary', icon:"floppy-disk", states:['edit']},
+			//{name: 'Approve', label: 'Approve', cls:'success', icon:"ok", states:['edit']},
+			//{name: 'Reject', label: 'Reject', cls:'danger', icon:"remove", states:['edit']},
+			{name: 'Cancel', label: 'Cancel', cls:'default', icon:"remove", states:['new','edit']}
+		]
 	}
 	
+	// Subscriptions
+	$rootScope.$broadcast('set-store', $scope.data);
+	
+	$rootScope.$on('store', function(evt,data){
+		$scope.state = data.state;
+		$scope.model = data.model;
+		console.log('roadster_widget',data);
+	});
+	
+	$rootScope.$on('button-click', function(evt,button){
+		switch (button.name){
+			case 'New': $scope.add(); break;
+			case 'Submit': $scope.submit(); break;
+			case 'Update': $scope.update(); break;	
+			case 'Cancel': $scope.reset(); break;
+			default: break;
+		}
+	});
+
+	$rootScope.$on('record-click', function(evt,id){
+		$scope.getRequest(id);
+	});
+	
+	// Local Scope functions	
+	$scope.modelGroupKeys = $scope.data.modelGroup.map(function(group){ return group.name; });
+	
+	$scope.select = function(sys_id){ $scope.getRequest(sys_id);}
+	
 	$scope.reset = function(){
-		$scope.model = {};
+		$rootScope.$broadcast('set-store', {
+			model:{},
+			state: ''
+		});
+	}
+	
+	$scope.add = function(){
+		$rootScope.$broadcast('set-store', {
+			model:{},
+			state:'new'
+		});
 	}
 	
 	$scope.submit = function(){
@@ -45,103 +90,59 @@
 		$scope.updateRequest($scope.model);
 	}
 	
-	
 	$scope.getRequest = function(id){
-		$scope.getById($scope.nowAPI, $scope.requestTableName,id);
+		$rootScope.$broadcast('getById',{
+			id:id
+		});
 	}
 		
 	$scope.getRequests = function(){
-		$scope.get($scope.nowAPI, $scope.requestTableName, $scope.sysparamLimit);
+		$rootScope.$broadcast('get',{});
 	}
 	
 	$scope.createRequest = function(data){
-		$scope.post($scope.nowAPI, $scope.requestTableName, data);
+			$rootScope.$broadcast('post',{
+			body:data
+		});
 	}
 	
 	$scope.updateRequest = function(data){
-		$scope.patch($scope.nowAPI, $scope.requestTableName, data);
+			$rootScope.$broadcast('patch',{
+				body:$scope.reduceModel(data)
+		});
 	}
 	
-	
-	$scope.getById = function(url, tableName, id){
-	
-		$http.get(url+tableName+'/'+id).then(
-      function successCallback(response) {
-        $scope.model = $scope.modelReduce(response.data.result);
-				$scope.response = response;
-      },
-      function errorCallback(response) {
-        console.log("Unable to perform get request");
-				$scope.error = response;
-      }
-    );
-		
-	}
-	
-	$scope.get = function(url, tableName, queryLimit){
-	
-		$http.get(url+tableName+'?sysparm_query=^ORDERBYsys_updated_on^ORDERBYDESCsys_updated_on&sysparm_limit='+queryLimit).then(
-      function successCallback(response) {
-        $scope.data = response.data.result;
-				$scope.response = response;
-      },
-      function errorCallback(response) {
-        console.log("Unable to perform get request");
-				$scope.error = response;
-      }
-    );
-		
-	}
-	
-	$scope.post = function(url, tableName, data) {
-		
-    $http.post(url+tableName, data).then(
-      function successCallback(response) {
-        console.log("Successfully POST-ed data");
-				$scope.response = response;
-				$scope.reset();
-				$scope.getRequests();
-      },
-      function errorCallback(response) {
-        console.log("POST-ing of data failed");
-				$scope.error = response;
-      }
-    );
-		
-	}
-	
-	$scope.patch = function(url, tableName, data) {
-		var obj = $scope.modelReduce(data);
-
-		$http.patch(url + tableName + '/'+ data.sys_id, data).then(
-      function successCallback(response) {
-        console.log("Successfully PATCH-ed data");
-				$scope.response = response;
-				$scope.getRequests();
-      },
-      function errorCallback(response) {
-        console.log("PATCH-ing of data failed");
-				$scope.error = response;
-      }
-    );
-		
-	}
-	
-	$scope.modelReduce = function(data){
+	$scope.reduceModel = function(model){
 		var obj = {};
-		$scope.modelGroupKeys.map(function(d){
-			obj[d] = data[d];
+		$scope.modelGroupKeys.map(function(key){
+			obj[key] = model[key];
 		});
 		return obj;
 	}
+
 	
 	$scope.getRequests();
 	
 	
 }]]></client_script>
         <controller_as>c</controller_as>
-        <css>.viewport { margin: 25px; }
-.thumbnail { padding: 20px; }</css>
+        <css>
+
+.parent {
+	display: flex;
+  flex-direction:row;
+}
+
+.item {
+	flex-grow:1;
+  margin: 10px;
+}
+
+.item_basis {
+	flex-basis: 50px;
+}
+
+</css>
         <data_table>sp_instance_table</data_table>
         <demo_data/>
         <description/>
@@ -160,96 +161,84 @@
         <script><![CDATA[(function() {
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
-	
-	
-	
 
+	data.listWidget = $sp.getWidget('ng-list');
+	data.buttonBarWidget = $sp.getWidget('ng-button-bar');
+	data.formWidget = $sp.getWidget('ng-form');
+	
+    
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-03-06 16:28:34</sys_created_on>
         <sys_id>6a637507db130010629a5385ca961960</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>204</sys_mod_count>
         <sys_name>Roadster Widget</sys_name>
         <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
         <sys_policy/>
         <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
         <sys_update_name>sp_widget_6a637507db130010629a5385ca961960</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-03-06 16:35:48</sys_updated_on>
-        <template><![CDATA[<div class="viewport">
-<!-- your widget template -->
-  
-  
-<div class="card">
-<button type="button" class="btn btn-info" ng-click="reset()">New</button>
-  <button type="button" class="btn btn-danger" ng-click="reset()">Reset</button>
+        <sys_updated_on>2020-03-09 02:55:25</sys_updated_on>
+        <template><![CDATA[
 
+<div class="parent">
+  
+  	<div class="item">
+       <sp-widget widget="listWidget" ></sp-widget>
+    </div>
+    
+    <div ng-if="state == 'new' || state == 'edit'" class="item item_basis">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+           {{ data.tableLabel }} Record
+        </div>
+        <div class="panel-body">
+          <sp-widget widget="buttonWidget"></sp-widget>
+      		<sp-widget widget="formWidget"></sp-widget> 
+        </div>
+    	</div>
+   </div>
+  
+   <div ng-if="state == 'submitted'" class="item item_basis">
+       <div class="panel panel-default">
+        <div class="panel-heading">
+           {{ data.tableLabel }} Record
+        </div>
+        <div class="panel-body" style="text-align: center">
+          <p>
+            Item Submitted!
+          </p>
+          <p>
+            {{ model.number }}
+          </p>
+         </div>
+    </div>
   </div>
   
-  <div class="container">
-    
-    <div class="form-group">
-      <label labelfor="sys_id">System Id</label>
-  		<input disabled ng-model="model.sys_id" type="text" class="form-control" id="sys_id" required>
- 	 </div>
-    
-  	<div class="form-group">
-      <label labelfor="short_description">Short Description</label>
-  		<input ng-model="model.short_description" type="text" class="form-control" id="short_description" required>
- 	 </div>
-    
-  </div>
-  
-  
-  
-<div class="card">
-
-<button ng-if="!model.sys_id" type="button" class="btn btn-primary" ng-click="submit()">Submit</button>
-
-<button ng-if="model.sys_id" type="button" class="btn btn-secondary" ng-click="update()">Update</button>
-
-<button type="button" class="btn btn-secondary" ng-click="refresh()">Refresh</button>
-
-  </div>
-
-  
-<div class="thumbnail">
-  
-   <p>
-   {{ data.length }} record(s) found
-  </p>
- 
-  <table class="table">
-  <thead class="thead">
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Number</th>
-      <th scope="col">Short Description</th>
-      <th scope="col">Updated On</th>
-      <th scope="col">Updated By</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="item in data">
-      <th scope="row">{{ item.sys_id }}</th>
-      <th scope="row"><a href="javascript:void()" ng-click="select(item.sys_id)">{{ item.number }}</a></th>
-      <td>{{ item.short_description }}</td>
-      <td>{{ item.sys_updated_on }}</td>
-      <td>@{{ item.sys_updated_by }}</td>
-    </tr>
-  </tbody>
-</table>
- 
-  
-
-</div>
-
-<div class="alert alert-danger" role="alert">
-  {{ error }}
+   <div ng-if="state == 'updated'" class="item item_basis">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+           {{ data.tableLabel }} Record
+        </div>
+        <div class="panel-body" style="text-align: center">
+          <p>
+            Item Saved!
+          </p>
+          <p>
+            {{ model.number }}
+          </p>
+         </div>
+    </div>
+    </div>
+   
 </div>
   
-  </div>]]></template>
+ 
+  
+  
+
+  ]]></template>
     </sp_widget>
 </record_update>

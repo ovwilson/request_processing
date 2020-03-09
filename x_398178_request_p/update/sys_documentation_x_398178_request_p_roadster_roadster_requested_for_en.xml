@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="roadster_requested_for" label="Requested For" language="en" table="x_398178_request_p_roadster">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>roadster_requested_for</element>
+            <help/>
+            <hint/>
+            <label>Requested For</label>
+            <language>en</language>
+            <name>x_398178_request_p_roadster</name>
+            <plural>Requested Fors</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-03-08 22:31:36</sys_created_on>
+            <sys_id>c8b9113bdbdb4010629a5385ca9619de</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Requested For</sys_name>
+            <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
+            <sys_update_name>sys_documentation_x_398178_request_p_roadster_roadster_requested_for_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-03-08 22:31:36</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget">
+    <m2m_sp_ng_pro_sp_widget action="DELETE">
+        <sp_angular_provider display_value="ngAPI">b733c097db570010629a5385ca96195a</sp_angular_provider>
+        <sp_widget display_value="Portal  Data Table">04d53587db130010629a5385ca96190f</sp_widget>
+        <sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-07 02:57:21</sys_created_on>
+        <sys_id>59530497db570010629a5385ca961946</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ngAPI.Portal  Data Table</sys_name>
+        <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_59530497db570010629a5385ca961946</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-07 02:57:21</sys_updated_on>
+    </m2m_sp_ng_pro_sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</application>
+        <file_path/>
+        <instance_id>912af92cdbf113c0b2e05d00cf961981</instance_id>
+        <instance_name>dev57615</instance_name>
+        <name>m2m_sp_ng_pro_sp_widget_59530497db570010629a5385ca961946</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget"><m2m_sp_ng_pro_sp_widget action="INSERT_OR_UPDATE"><sp_angular_provider display_value="ngAPI">b733c097db570010629a5385ca96195a</sp_angular_provider><sp_widget display_value="Portal  Data Table">04d53587db130010629a5385ca96190f</sp_widget><sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-03-07 02:57:21</sys_created_on><sys_id>59530497db570010629a5385ca961946</sys_id><sys_mod_count>0</sys_mod_count><sys_name>ngAPI.Portal  Data Table</sys_name><sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package><sys_policy/><sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope><sys_update_name>m2m_sp_ng_pro_sp_widget_59530497db570010629a5385ca961946</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-03-07 02:57:21</sys_updated_on></m2m_sp_ng_pro_sp_widget></record_update>]]></payload>
+        <payload_hash>1645304438</payload_hash>
+        <record_name>ngAPI.Portal  Data Table</record_name>
+        <reverted_from/>
+        <source>06f7b1c7db130010629a5385ca9619f5</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-07 02:57:21</sys_created_on>
+        <sys_id>1d530497db570010629a5385ca961948</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>170b2ecff620000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-07 02:57:21</sys_updated_on>
+        <type>Angular Providers</type>
+        <update_guid>55530497f2570010590f3445546b4248</update_guid>
+        <update_guid_history>55530497f2570010590f3445546b4248:1645304438</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="ngAPI.Portal  Data Table">3cca01a7db534010629a5385ca961970</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-08 02:47:54</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_ng_pro_sp_widget">m2m_sp_ng_pro_sp_widget</sys_db_object>
+        <sys_id>071743e2067b4094863c9ff8a55cf7a4</sys_id>
+        <sys_metadata>59530497db570010629a5385ca961946</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ngAPI.Portal  Data Table</sys_name>
+        <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
+        <sys_scope_delete display_value="">29262d4c53c74f37886211821ce8e971</sys_scope_delete>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_59530497db570010629a5385ca961946</sys_update_name>
+        <sys_update_version display_value="m2m_sp_ng_pro_sp_widget_59530497db570010629a5385ca961946">1d530497db570010629a5385ca961948</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-08 02:47:54</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

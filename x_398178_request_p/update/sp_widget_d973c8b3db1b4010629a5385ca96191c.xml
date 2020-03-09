@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($rootScope, $scope, StoreService) {
+
+  var c = this;
+	
+	$scope.buttons = [];
+	
+	$scope.onClick = function(button){
+		$rootScope.$broadcast('button-click', button);
+	}
+	
+	$rootScope.$on('store', function(evt,data){
+		// console.log('ng-button-bar',data)
+		$scope.buttons = data.buttons.filter(function(button){
+			return button.states.includes(data.state);
+		});
+	});
+	
+	$rootScope.$broadcast('get-store');
+	
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>button {
+ margin:5px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>ng-button-bar</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>ngButtonBar</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-08 16:15:25</sys_created_on>
+        <sys_id>d973c8b3db1b4010629a5385ca96191c</sys_id>
+        <sys_mod_count>31</sys_mod_count>
+        <sys_name>ngButtonBar</sys_name>
+        <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
+        <sys_update_name>sp_widget_d973c8b3db1b4010629a5385ca96191c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-08 19:29:35</sys_updated_on>
+        <template><![CDATA[ 
+<div>
+	<p ng-if="buttons.length == 0">
+    No Buttons Available
+  </p>
+	<button ng-repeat="button in buttons" 
+          type="button" class="btn btn-{{ button.cls }}" 
+          ng-click="onClick(button)"> 
+    <i ng-if="button.icon" class="glyphicon glyphicon-{{ button.icon }}"></i> {{ button.label }}</button>
+
+</div>]]></template>
+    </sp_widget>
+</record_update>

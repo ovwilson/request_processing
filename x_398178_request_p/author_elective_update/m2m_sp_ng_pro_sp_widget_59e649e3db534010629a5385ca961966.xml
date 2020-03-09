@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget">
+    <m2m_sp_ng_pro_sp_widget action="DELETE">
+        <sp_angular_provider display_value="ngService">b733c097db570010629a5385ca96195a</sp_angular_provider>
+        <sp_widget display_value="Roadster Widget">6a637507db130010629a5385ca961960</sp_widget>
+        <sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-08 02:31:00</sys_created_on>
+        <sys_id>59e649e3db534010629a5385ca961966</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ngService.Roadster Widget</sys_name>
+        <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_59e649e3db534010629a5385ca961966</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-08 02:31:00</sys_updated_on>
+    </m2m_sp_ng_pro_sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</application>
+        <file_path/>
+        <instance_id>912af92cdbf113c0b2e05d00cf961981</instance_id>
+        <instance_name>dev57615</instance_name>
+        <name>m2m_sp_ng_pro_sp_widget_59e649e3db534010629a5385ca961966</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget"><m2m_sp_ng_pro_sp_widget action="INSERT_OR_UPDATE"><sp_angular_provider display_value="ngService">b733c097db570010629a5385ca96195a</sp_angular_provider><sp_widget display_value="Roadster Widget">6a637507db130010629a5385ca961960</sp_widget><sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-03-08 02:31:00</sys_created_on><sys_id>59e649e3db534010629a5385ca961966</sys_id><sys_mod_count>0</sys_mod_count><sys_name>ngService.Roadster Widget</sys_name><sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package><sys_policy/><sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope><sys_update_name>m2m_sp_ng_pro_sp_widget_59e649e3db534010629a5385ca961966</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-03-08 02:31:00</sys_updated_on></m2m_sp_ng_pro_sp_widget></record_update>]]></payload>
+        <payload_hash>-1877462779</payload_hash>
+        <record_name>ngService.Roadster Widget</record_name>
+        <reverted_from/>
+        <source>06f7b1c7db130010629a5385ca9619f5</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-08 02:31:00</sys_created_on>
+        <sys_id>9de649e3db534010629a5385ca961968</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>170b7fb3db30000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-08 02:31:00</sys_updated_on>
+        <type>Angular Providers</type>
+        <update_guid>d5e649e3c2534010d4fc3a6995a18568</update_guid>
+        <update_guid_history>d5e649e3c2534010d4fc3a6995a18568:-1877462779</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="ngService.Roadster Widget">fcca05a7db534010629a5385ca96194b</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-08 02:47:54</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_ng_pro_sp_widget">m2m_sp_ng_pro_sp_widget</sys_db_object>
+        <sys_id>3b0eb336e29c4aa897788005cb518cc1</sys_id>
+        <sys_metadata>59e649e3db534010629a5385ca961966</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ngService.Roadster Widget</sys_name>
+        <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
+        <sys_scope_delete display_value="">29262d4c53c74f37886211821ce8e971</sys_scope_delete>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_59e649e3db534010629a5385ca961966</sys_update_name>
+        <sys_update_version display_value="m2m_sp_ng_pro_sp_widget_59e649e3db534010629a5385ca961966">9de649e3db534010629a5385ca961968</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-08 02:47:54</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

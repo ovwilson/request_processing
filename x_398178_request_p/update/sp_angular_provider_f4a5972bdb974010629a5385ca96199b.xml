@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_angular_provider">
+    <sp_angular_provider action="INSERT_OR_UPDATE">
+        <name>StoreService</name>
+        <script><![CDATA[function($rootScope, $http){
+	
+	var store = {
+		id: null,
+		model: {},
+		models: [],
+		modelGroup: [],
+		buttons: [],
+		state: '',
+		url:null,
+		query:'',
+		queryLimit: 10,
+		tableName: null,
+		tableLabel: 'No Title',
+		errors: []
+	}
+	
+	$rootScope.$on('set-store', function(evt,data){
+		Object.keys(data).map(function(key){
+			store[key] = data[key];
+		});
+		$rootScope.$broadcast('store', store);
+	});
+	
+	$rootScope.$on('get-store', function(evt,data){
+		$rootScope.$broadcast('store', store);
+	});
+	
+	$rootScope.$on('get', function(evt,data){
+		
+		$http.get(store.url + store.tableName+'?sysparm_query='+store.query+'&sysparm_limit='+store.queryLimit).then(
+			function successCallback(response) {
+				store.models = response.data.result;
+				$rootScope.$broadcast('store', store);
+		}, function errorCallback(response) {
+			console.log("Unable to perform get request");
+			store.errors.push(response);
+		});
+	
+	});
+	
+	$rootScope.$on('getById', function(evt,data){
+	
+		$http.get(store.url+store.tableName+'/'+data.id).then(
+      function successCallback(response) {
+				store.model = response.data.result;
+				store.id = store.model.sys_id;
+				store.state = 'edit';
+				$rootScope.$broadcast('store', store);
+      },
+      function errorCallback(response) {
+        console.log("Unable to perform get request");
+			  store.errors.push(response);
+      }
+    );
+		
+	});
+	
+	$rootScope.$on('post', function(evt,data) {
+		
+    $http.post(store.url + store.tableName, data.body).then(
+      function successCallback(response) {
+        console.log("Successfully POST-ed data", response);
+				store.model = response.data.result;
+				store.state = 'submitted';
+				store.id = store.model.sys_id;
+				$rootScope.$broadcast('store', store);
+				$rootScope.$broadcast('get', {});
+      },
+      function errorCallback(response) {
+        console.log("POST-ing of data failed");
+			  store.errors.push(response);
+      }
+    );
+		
+	});
+	
+	$rootScope.$on('patch', function(evt,data) {
+
+		$http.patch(store.url + store.tableName + '/'+ data.body.sys_id, data.body).then(
+      function successCallback(response) {
+        console.log("Successfully PATCH-ed data", response);
+				store.model = response.data.result;
+				store.state = 'updated';
+				store.id = store.model.sys_id;
+				$rootScope.$broadcast('store', store);
+				$rootScope.$broadcast('get', {});
+      },
+      function errorCallback(response) {
+        console.log("PATCH-ing of data failed");
+				store.errors.push(response);
+      }
+    );
+		
+	});
+	
+	
+	
+}
+]]></script>
+        <sys_class_name>sp_angular_provider</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-08 12:56:37</sys_created_on>
+        <sys_id>f4a5972bdb974010629a5385ca96199b</sys_id>
+        <sys_mod_count>56</sys_mod_count>
+        <sys_name>StoreService</sys_name>
+        <sys_package display_value="Request Processing" source="x_398178_request_p">a1e00611db0b0010629a5385ca9619bc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Request Processing">a1e00611db0b0010629a5385ca9619bc</sys_scope>
+        <sys_update_name>sp_angular_provider_f4a5972bdb974010629a5385ca96199b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-09 02:40:59</sys_updated_on>
+        <type>service</type>
+    </sp_angular_provider>
+</record_update>
